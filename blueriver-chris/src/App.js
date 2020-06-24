@@ -37,6 +37,7 @@ function App() {
 
   return (
     <div className="container">
+    <h1>Index</h1>
     <ApplePark zones={zones}/>
     <Bubb zones={zones}/>
     <InfiniteLoop zones={zones}/>

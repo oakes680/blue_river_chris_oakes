@@ -1,30 +1,21 @@
 import React from "react";
+//import filter function and map function from utils
+import filterZones from "../utils/filterZone";
+import mapFunction from "../utils/mapFunction"
 
 const OtherBayArea = ({ zones }) => {
-  let filteredZones = zones.filter((zone) => {
-    return zone.buildingzone === "Other Bay Area";
-  });
+    // filter data for all building zones titled Apple Park
 
-  filteredZones.sort((a, b) => (a.buildingname > b.buildingname ? 1 : -1));
+    let filteredZones = filterZones(zones, "Other Bay Area");
 
-  return (
-    <>
-      <h3>Other Bay Area</h3>
-      <div className="buildings">
-      {filteredZones.map((building) => {
-        if (building.black === 1) {
-          return (
-            <a href="https://applefacilities.review.blueriver.com">
-              {building.buildingname}
-            </a>
-          );
-        } else {
-          return <p>{building.buildingname}</p>;
-        }
-      })}
-      </div>
-    </>
-  );
+    return (
+        <>
+            <h3>{filteredZones.length < 1 ? 'Loading' : filteredZones[0].buildingzone}</h3>
+            <div className="buildings">
+                {mapFunction(filteredZones)}
+            </div>
+        </>
+    );
 };
 
 export default OtherBayArea;
