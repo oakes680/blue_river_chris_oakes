@@ -36,8 +36,7 @@ function App() {
 
 
   return (
-    <>
-    <h1>Start of Project</h1>
+    <div className="container">
     <ApplePark zones={zones}/>
     <Bubb zones={zones}/>
     <InfiniteLoop zones={zones}/>
@@ -45,7 +44,7 @@ function App() {
     <SunnyvaleEast zones={zones}/>
     <SunnyvaleWest zones={zones}/>
     <OtherBayArea zones={zones}/>
-    </>
+    </div>
   );
 }
 

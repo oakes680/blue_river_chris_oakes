@@ -9,7 +9,8 @@ const SantaClaraSanJose = ({ zones }) => {
 
   return (
     <>
-      <h1>Santa Clara/San Jose</h1>
+      <h3>Santa Clara/San Jose</h3>
+      <div className="buildings">
       {filteredZones.map((building) => {
         if (building.black === 1) {
           return (
@@ -21,6 +22,7 @@ const SantaClaraSanJose = ({ zones }) => {
           return <p>{building.buildingname}</p>;
         }
       })}
+      </div>
     </>
   );
 };

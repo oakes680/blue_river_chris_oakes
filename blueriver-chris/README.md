@@ -8,10 +8,10 @@
   * postman
   
 # Problem
-  
-
+  * Need to access Api, filter, sort, and display data.
 
 # Solution
+
 
 # Final Thoughts
 

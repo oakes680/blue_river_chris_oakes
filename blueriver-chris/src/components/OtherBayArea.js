@@ -9,7 +9,8 @@ const OtherBayArea = ({ zones }) => {
 
   return (
     <>
-      <h1>Other Bay Area</h1>
+      <h3>Other Bay Area</h3>
+      <div className="buildings">
       {filteredZones.map((building) => {
         if (building.black === 1) {
           return (
@@ -21,6 +22,7 @@ const OtherBayArea = ({ zones }) => {
           return <p>{building.buildingname}</p>;
         }
       })}
+      </div>
     </>
   );
 };

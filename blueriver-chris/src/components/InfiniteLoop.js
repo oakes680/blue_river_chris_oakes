@@ -9,7 +9,8 @@ const InfiniteLoop = ({ zones }) => {
 
   return (
     <>
-      <h1>Infinite Loop</h1>
+      <h3>Infinite Loop</h3>
+      <div className="buildings">
       {filteredZones.map((building) => {
         if (building.black === 1) {
           return (
@@ -21,6 +22,7 @@ const InfiniteLoop = ({ zones }) => {
           return <p>{building.buildingname}</p>;
         }
       })}
+      </div>
     </>
   );
 };

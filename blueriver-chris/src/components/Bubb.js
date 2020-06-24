@@ -9,7 +9,8 @@ const Bubb = ({ zones }) => {
 
   return (
     <>
-      <h1>Bubb / Results Way</h1>
+      <h3>Bubb / Results Way</h3>
+      <div className="buildings">
       {filteredZones.map((building) => {
         if (building.black === 1) {
           return (
@@ -21,6 +22,7 @@ const Bubb = ({ zones }) => {
           return <p>{building.buildingname}</p>;
         }
       })}
+      </div>
     </>
   );
 };

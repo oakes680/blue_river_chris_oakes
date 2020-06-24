@@ -10,7 +10,8 @@ const ApplePark = ({ zones }) => {
 
   return (
     <>
-      <h1>Apple Park</h1>
+      <h3>Apple Park</h3>
+      <div className="buildings">
       {filteredZones.map((building) => {
         if (building.black === 1) {
           return (
@@ -22,6 +23,7 @@ const ApplePark = ({ zones }) => {
           return <p>{building.buildingname}</p>;
         }
       })}
+      </div>
     </>
   );
 };
