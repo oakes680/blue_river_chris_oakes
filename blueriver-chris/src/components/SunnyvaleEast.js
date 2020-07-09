@@ -1,30 +1,22 @@
 import React from "react";
+//import filter function and map function from utils
+import filterZones from "../utils/filterZone";
+import mapFunction from "../utils/mapFunction"
+
 
 const SunnyValeEast = ({ zones }) => {
-  let filteredZones = zones.filter((zone) => {
-    return zone.buildingzone === "Sunnyvale East";
-  });
+    // filter data for all building zones titled Apple Park
 
-  filteredZones.sort((a, b) => (a.buildingname > b.buildingname ? 1 : -1));
+    let filteredZones = filterZones(zones, "Sunnyvale East");
 
-  return (
-    <>
-      <h3>Sunnyvale East</h3>
-      <div className="buildings">
-      {filteredZones.map((building) => {
-        if (building.black === 1) {
-          return (
-            <a href="https://applefacilities.review.blueriver.com">
-              {building.buildingname}
-            </a>
-          );
-        } else {
-          return <p>{building.buildingname}</p>;
-        }
-      })}
-      </div>
-    </>
-  );
+    return (
+        <>
+            <h3>{filteredZones.length < 1 ? 'Loading' : filteredZones[0].buildingzone}</h3>
+            <div className="buildings">
+                {mapFunction(filteredZones)}
+            </div>
+        </>
+    );
 };
 
 export default SunnyValeEast;
